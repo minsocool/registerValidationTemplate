@@ -1,0 +1,197 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+html {
+    position: relative;
+}
+
+.main {
+    background-image: linear-gradient(270deg, #1fa0ff, #12DAFB, #A7FDCC);
+    min-height: 100vh;
+    display: flex;
+    color: white;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+
+.form {
+    width: 40%;
+    min-height: 100px;
+    padding: 32px 24px;
+    text-align: center;
+    align-self: center;
+    background-color: #202124;
+    border-radius: 2px;
+    margin: 24px;
+    border-radius: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.form .heading {
+    font-size: 2rem;
+}
+
+.form .desc {
+    text-align: center;
+    color: #636d77;
+    font-size: 1.6rem;
+    font-weight: lighter;
+    line-height: 2.4rem;
+    margin-top: 16px;
+    font-weight: 300;
+}
+
+.form-group {
+    display: flex;
+    margin-bottom: 10px;
+    flex-direction: column;
+    padding: 0 20px;
+}
+
+#image-picker {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #202124;
+}
+
+.btn-upload {
+    display: block;
+    width: 200px;
+    background: #08AEEA;
+    color: white;
+    padding: 12px;
+    margin: 10px auto;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+.btn-upload:hover {
+    opacity: 0.8;
+}
+
+
+
+.form-label,
+.form-message {
+    text-align: left;
+}
+
+.form-label {
+    font-weight: 700;
+    padding-bottom: 6px;
+    line-height: 1.8rem;
+    font-size: 1.1rem;
+}
+
+.form-control {
+    width: 100%;
+    height: 30px;
+    padding: 2px 12px;
+    background-color: transparent;
+    border: 1px solid transparent;
+    color: white;
+    border-bottom-color: white;
+    border-radius: 3px;
+    outline: none;
+    font-size: 1.2rem;
+}
+
+.form-control:hover {
+    border-color: #1dbfaf;
+}
+
+.form-group.invalid .form-control {
+    border-bottom-color: #f33a58;
+}
+
+.form-group.invalid .form-message {
+    color: #f33a58;
+}
+
+
+.form-message {
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    padding: 4px 0 0;
+}
+
+.form-group.horizontal {
+    display: flex;
+}
+
+.radio-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.checkbox-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+
+.inputGender {
+    padding: 0 15px;
+    font-size: 0.9rem;
+}
+
+.inputGender p {
+    font-size: 1.2rem;
+}
+
+.inputCourse {
+    padding: 0 15px;
+    font-size: 0.9rem;
+}
+
+.inputCourse p {
+    font-size: 1.3rem;
+}
+
+.form-group select {
+    background-color: #202124;
+}
+
+.form-submit {
+    outline: none;
+    background-image: linear-gradient(270deg, #08AEEA 0%, #2AF598 100%);
+    margin-top: 40px;
+    padding: 12px 16px;
+    font-weight: 600;
+    color: #000;
+    border: none;
+    width: 100%;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.form-submit:hover {
+    opacity: 0.9;
+}
+
+.spacer {
+    margin-top: 40px;
+}
+
+.author {
+    position: absolute;
+    color: #000;
+    bottom: 20px;
+
+}
+
+.author a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}

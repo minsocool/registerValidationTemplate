@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Form</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<body>
+    <div class="main">
+        <form action="" method="POST" class="form" id="form-1">
+            <h3 class="heading">Register Form</h3>
+            <p class="desc">
+                "Work Hard, Play Hard"
+            </p>
+            <div class="spacer"></div>
+            <img src="https://lh3.googleusercontent.com/a/ACg8ocIMeYGU7FJRMj8oszy8uFWLNLYNWuOPGE2rnM6zB5kBTA=s288-c-no"
+                id="image-picker">
+            <!-- Avatar -->
+            <div class="form-group">
+                <!-- <label for="avatar_label" class="form-label">Upload Avatar:</label> -->
+                <label for="avatar" class="btn-upload">Update image</label>
+                <input id="avatar" name="avatar" type="file" class="form-control"
+                    accept="image/jpeg,image/png,image/jpg" style="display:none">
+                <span class="form-message"></span>
+            </div>
+            <!-- Name -->
+            <div class="form-group">
+                <label for="fullname" class="form-label">Full Name:</label>
+                <input id="fullname" name="fullname" type="text" placeholder="Enter Full Name" class="form-control">
+                <span class="form-message"></span>
+            </div>
+
+            <!-- Gender -->
+            <div class="form-group horizontal">
+                <label for="gender" class="form-label">Gender:</label>
+                <div class="radio-group">
+                    <div class="inputGender">
+                        <input name="gender" type="radio" value="male" class="form-control">
+                        <p>Male👨🏻‍🚀</p>
+
+                    </div>
+                    <div class="inputGender">
+                        <input name="gender" type="radio" value="female" class="form-control">
+                        <p>Female👩🏼‍🚀</p>
+                    </div>
+                    <div class="inputGender">
+                        <input name="gender" type="radio" value="other" class="form-control">
+                        <p>
+                            Rather not say
+                        </p>
+                    </div>
+                </div>
+                <span class="form-message"></span>
+            </div>
+
+            <!-- Course -->
+            <div class="form-group horizontal">
+                <label for="course" class="form-label">Courses:</label>
+                <div class="checkbox-group">
+                    <div class="inputCourse">
+                        <input name="course" type="checkbox" value="React" class="form-control">
+                        <p>React <i class="fa-brands fa-react" style="color: #26D9FD; font-size: 24px;"></i></p>
+                    </div>
+                    <div class="inputCourse">
+                        <input name="course" type="checkbox" value="Nodejs" class="form-control">
+                        <p>NodeJS <i class="fa-brands fa-node" style="color:#90C53F;font-size: 24px"></i></p>
+                    </div>
+                    <div class="inputCourse">
+                        <input name="course" type="checkbox" value="Javascript" class="form-control">
+                        <p>
+                            Javascript <i class="fa-brands fa-js" style="color: #F7DF1E;font-size: 24px;"></i>
+                        </p>
+                    </div>
+                    <div class="inputCourse">
+                        <input name="course" type="checkbox" value="Javascript" class="form-control">
+                        <p>
+                            Sass <i class="fa-brands fa-sass" style="color: #CF649A;font-size: 24px;"></i>
+                        </p>
+                    </div>
+
+                </div>
+                <span class="form-message"></span>
+            </div>
+            <!-- City -->
+            <div class="form-group">
+                <label for="city" class="form-label">City/Province:</label>
+                <select id="city" name="city" class="form-control">
+                    <option value="">--Choose City/Province--</option>
+                    <option value="HaNoi">Ha Noi</option>
+                    <option value="HCM">Ho Chi Minh</option>
+                    <option value="HCM">Da Nang</option>
+                    <option value="HCM">Hue</option>
+                    <option value="HCM">Phan Thiet</option>
+                    <option value="HCM">Da Lat</option>
+                </select>
+                <span class="form-message"></span>
+            </div>
+            <!-- Email -->
+            <div class="form-group">
+                <label for="email" class="form-label">Email:</label>
+                <input id="email" name="email" type="text" placeholder="Enter email" class="form-control">
+                <span class="form-message"></span>
+            </div>
+            <!-- Password -->
+            <div class="form-group">
+                <label for="password" class="form-label">Password:</label>
+                <input id="password" name="password" type="password" placeholder="Password" class="form-control">
+                <span class="form-message"></span>
+            </div>
+
+            <!-- Confirm password -->
+            <div class="form-group">
+                <label for="password_confirmation" class="form-label">Confirm Password:</label>
+                <input id="password_confirmation" name="password_confirmation" placeholder="Confirm Password"
+                    type="password" class="form-control">
+                <span class="form-message"></span>
+            </div>
+            <button class="form-submit">Submit</button>
+        </form>
+        <div class="author">Made by <a href="https://github.com/minsocool" target="_blank">Hoang Minh</a></div>
+    </div>
+    <script src="main.js"></script>
+    <script>
+        Validator({
+            form: '#form-1',
+            formGroupSelector: '.form-group',
+            errorMessageSelector: '.form-message',
+            rules: [
+                // Trường hợp có nhiều rules sẽ bị ghi đè vào rule đằng trước nó (do vòng lặp forEach ghi đè lên)
+                Validator.isRequired('#avatar', `The supplied avatar must be provided`),
+                Validator.isRequired('#fullname', `Please enter your full name`),
+                Validator.isRequired('input[name="gender"]', 'Please fill your gender'),
+                Validator.isRequired('input[name="course"]', 'Please make a selection of your course'),
+                Validator.isRequired('#city', 'Please choose your province'),
+                Validator.isRequired('#email', `Please enter your email`),
+                Validator.isEmail('#email', "Please enter a valid email address"),
+                Validator.minLength('#password', 6),
+                Validator.isRequired('#password_confirmation', `Sorry! Confirm your password is required`),
+                Validator.isConfirm('#password_confirmation', function () {
+                    return document.querySelector('#form-1 #password').value
+                }, "Please match the requested format")
+            ],
+            onSubmit: function (data) {
+                console.log(data)
+            }
+        })
+    </script>
+</body>
+
+</html>
